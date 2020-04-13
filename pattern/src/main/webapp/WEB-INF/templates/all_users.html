@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Spring MVC</title>
+</head>
+
+<body>
+    <h1>Список пользователей:</h1>
+    <table>
+        <thead>
+        <tr>
+            <td>ID</td>
+            <td>Login</td>
+            <td>Password</td>
+            <td>Name</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="u : ${users}">
+                <td>${u.id}</td>
+                <td>${u.login}</td>
+                <td>${u.password}</td>
+                <td>${u.name}</td>
+        </tr>
+        </tbody>
+    </table>
+    <a th:href="@{/}">на Главную страницу</a>
+</body>
+</html>
